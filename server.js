@@ -3,30 +3,18 @@ const app = express();
 const path = require('path');
 const port = process.env.PORT || 5000;
 
-console.log(process.env.NODE_ENV)
+app.use(express.static('client/build'))
 
-if(process.env.NODE_ENV === 'Development') {  
+app.get('*', (req, res) => {    
+    res.sendfile('client/build/index.html')
+})
 
-    console.log('Development mode')
+// app.use(express.static(path.join(__dirname, 'client/public')));
 
-    app.use(express.static('client/public'))
+// app.get('*', (req, res) => {    
+//     res.sendfile(path.join(__dirname = 'client/public/index.html'));  
+// })
 
-    app.get('*', (req, res) => {    
-        res.sendfile('client/public/index.html')
-    })
-
-} else{
-
-    console.log('Production mode')
-
-    app.use(express.static(path.join(__dirname, 'client/public')));
-
-    app.get('*', (req, res) => {    
-        res.sendfile(path.join(__dirname = 'client/public/index.html'));  
-    })
-}
-
-//start server
 app.listen(port, (req, res) => {  
     console.log( `server listening on port: ${port}`)
 })
