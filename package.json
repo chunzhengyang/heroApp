@@ -4,14 +4,10 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "concurrently \"npm run server\" \"npm run client\"",
-    "client-install": "npm install --prefix client", 
     "server": "nodemon index.js",    
-    "client": "cd client && npm start",    
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
-  },
+    "client": "cd client && react-scripts start"   
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chunzhengyang/heroApp.git"
