@@ -6,9 +6,9 @@ const port = process.env.PORT || 5000;
 console.log(__dirname)
 
 //production mode
-if(process.env.NODE_ENV === 'production') {  
+if(process.env.NODE_ENV === 'Development') {  
 
-    console.log('Production mode')
+    console.log('Development mode')
 
     app.use(express.static('client/public'))
 
@@ -18,7 +18,7 @@ if(process.env.NODE_ENV === 'production') {
 
 } else{
 
-    console.log('Development mode')
+    console.log('Production mode')
 
     app.use(express.static(path.join(__dirname, 'client/public')));
 
