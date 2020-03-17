@@ -3,9 +3,8 @@ const app = express();
 const path = require('path');
 const port = process.env.PORT || 5000;
 
-console.log(__dirname)
+console.log(process.env.NODE_ENV)
 
-//production mode
 if(process.env.NODE_ENV === 'Development') {  
 
     console.log('Development mode')
