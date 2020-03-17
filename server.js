@@ -5,6 +5,7 @@ const port = process.env.PORT || 5000;
 
 //Static file declaration
 app.use(express.static(path.join(__dirname, 'client/public')));
+console.log(__dirname)
 
 //production mode
 if(process.env.NODE_ENV === 'production') {  
