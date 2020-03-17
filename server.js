@@ -8,10 +8,10 @@ const port = process.env.PORT || 6000;
 
     console.log('production mode')
 
-    app.use(express.static(path.join(__dirname, 'client/public')));
+    app.use(express.static(path.join(__dirname, 'client/build')));
 
     app.get('*', (req, res) => {    
-        res.sendfile(path.join(__dirname = 'client/public/index.html'));  
+        res.sendfile(path.join(__dirname = 'client/build/index.html'));  
     })//}
 
 //start server
